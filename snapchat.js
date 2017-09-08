@@ -37,7 +37,7 @@ var e = module.exports;
 /** @const */ var pattern = e.hash_pattern = "0001110111101110001111010101111011010001001110011000110001000110";
 /** @const */ var secret = e.secret = "iEk21fuwZApXlz93750dmW22pw389dPwOk";
 /** @const */ var static_token = e.static_token = "m198sOkJEn37DjqZ32lpRu76xmw288xSQ9";
-/** @const */ var hostname = e.hostname = "feelinsonice.appspot.com";
+/** @const */ var hostname = e.hostname = "feelinsonice-hrd.appspot.com";
 /** @const */ var user_agent = e.user_agent = "Snapchat/8.1.1 (Nexus 5; Android 21; gzip)";
 
 var sink = require("stream-sink");
@@ -117,9 +117,10 @@ e.postCall = function postCall(endpoint, post_data, param1, param2, raw, cb) {
  * @param  {String}  password
  * @return {Promise} sync data
  */
+//Added right login url beacuse Four Oh Four
 e.login = function login(username, password, cb) {
     var ts = '' + Date.now();
-    return e.postCall('/ph/login', {
+    return e.postCall('/loq/login', {
         username: username,
         password: password,
         timestamp: ts
